@@ -1,0 +1,39 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Enable global location search in UI (replace hardcoded Berlin/San Francisco matching)",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Replace hardcoded location matching with a global place-search that shows multiple results and sets selectedLocation lat/lon for weather loading.",
+      "acceptanceCriteria": [
+        "Typing a query like \"Paris\" shows a list of matching locations from around the world (when available), not just a single hardcoded result.",
+        "Selecting a search result sets selectedLocation.name/lat/lon and triggers weather loading via the existing weather query flow.",
+        "If the search returns no matches, the UI shows a clear English message indicating no results were found.",
+        "The search input placeholder/help text is updated to reflect global search (no longer suggests only Berlin/San Francisco)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useLocationSearch.ts",
+          "operation": "create",
+          "description": "Add a reusable hook that performs global place search from the frontend (e.g., via a public geocoding service) and returns loading/error states plus a list of matching places including display name and lat/lon. Include debouncing/cancellation so rapid typing doesn’t spam requests."
+        },
+        {
+          "path": "frontend/src/features/location/types.ts",
+          "operation": "create",
+          "description": "Define TypeScript types for place search results (e.g., displayName, city/region/country fields when available, lat, lon) to keep App/UI code strongly typed."
+        },
+        {
+          "path": "frontend/src/features/location/components/LocationSearch.tsx",
+          "operation": "create",
+          "description": "Create a LocationSearch component that renders the search input and a results list (multiple matches). It should show an English 'No results found' message when the search completes with zero matches and an English error message when the search fails. It should call an onSelect callback with the chosen place’s name/lat/lon."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Remove the current Berlin/San Francisco string-matching logic and wire the new LocationSearch component into the existing search section. When a result is selected, set selectedLocation.name/lat/lon and rely on the existing useWeatherData(selectedLocation) flow to trigger weather loading. Update placeholder/help text to reflect global search (no Berlin/SF wording)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "build_request",
+  "title": "Enable truly global location search (remove hardcoded Berlin/San Francisco limitation)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Update the location search UI so users can search and select any place in the world (not just Berlin or San Francisco). Replace the current hardcoded string-matching search behavior with a real place search that returns multiple matches (city/region/country) and lets the user select one result to set latitude/longitude for weather fetching.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "it should show all the places in the world"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Typing a query like \"Paris\" shows a list of matching locations from around the world (when available), not just a single hardcoded result.",
+        "Selecting a search result sets selectedLocation.name/lat/lon and triggers weather loading via the existing weather query flow.",
+        "If the search returns no matches, the UI shows a clear English message indicating no results were found.",
+        "The search input placeholder/help text is updated to reflect global search (no longer suggests only Berlin/San Francisco)."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Remove the backend restriction that only allows \"blessed\" locations. Update backend/main.mo so location lookup no longer traps for non-Berlin/San-Francisco inputs, enabling global location lookup support.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "it should show all the places in the world"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend location lookup no longer traps with \"Only blessed locations allowed\" when given a valid non-Berlin/San-Francisco location query.",
+        "The backend can return coordinates for at least 3 test queries (e.g., \"Tokyo\", \"Cairo\", \"Sydney\") without trapping."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo (no additional backend services).",
+    "Do not edit frontend immutable paths listed in SYSTEM_CONTEXT (compose existing UI components instead).",
+    "Use English for any user-facing text."
+  ],
+  "nonGoals": [
+    "Adding maps/geolocation UI (GPS) or an interactive world map.",
+    "Adding real-time updates via WebSockets or push notifications.",
+    "Adding third-party authentication beyond Internet Identity."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-location-search-ui-so-users-can-search-and-select-any-place-in-the-world-not-just-berlin-or-san-francisco-replace-the-current-hardcoded-string-matching-search-behavior-with-a-real-place-search-that-returns-multiple-matches-city-region-country-and-lets-the-user-select-one-result-to-set-latitude-longitude-for-weather-fetching",
+      "featureTitle": "Update the location search UI so users can search and select any place in the world (not just Berlin or San Francisco). Replace the current hardcoded string-matching search behavior with a real place search that returns multiple matches (city/region/country) and lets the user select one result to set latitude/longitude for weather fetching.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/location/components/LocationSearch.tsx",
+        "frontend/src/features/location/types.ts",
+        "frontend/src/hooks/useLocationSearch.ts"
+      ],
+      "components": [
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

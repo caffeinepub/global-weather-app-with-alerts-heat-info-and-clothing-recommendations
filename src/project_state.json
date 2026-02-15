@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Weather app that shows weather for all places, includes warnings/alerts, and recommends what to wear with a focus on heat-related conditions.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-weather-dashboard-ui-that-supports-global-location-lookup-search-by-city-region-country-lets-the-user-select-a-location-and-shows-current-conditions-plus-a-short-forecast-for-the-selected-location",
+      "title": "Create a weather dashboard UI that supports global location lookup (search by city/region/country), lets the user select a location, and shows current conditions plus a short forecast for the selected location.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-weather-warnings-alerts-display-for-the-selected-location-with-clear-severity-labeling-and-recommended-immediate-actions-when-alerts-are-present",
+      "title": "Add weather warnings/alerts display for the selected location, with clear severity labeling and recommended immediate actions when alerts are present.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-what-to-wear-recommendations-based-on-current-forecast-conditions-with-an-explicit-focus-on-heat-risk-e-g-high-temperature-high-feels-like-heat-index-if-available-and-practical-guidance",
+      "title": "Provide “What to wear” recommendations based on current/forecast conditions, with an explicit focus on heat risk (e.g., high temperature, high feels-like, heat index if available) and practical guidance.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dedicated-heat-panel-to-the-weather-display-that-highlights-high-temperature-conditions-e-g-today-s-max-feels-like-and-a-simple-heat-risk-level-and-clearly-communicates-when-heat-is-a-concern",
+      "title": "Add a dedicated “Heat” panel to the weather display that highlights high temperature conditions (e.g., today’s max, feels-like, and a simple heat-risk level), and clearly communicates when heat is a concern.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-creative-visual-theme-for-the-app-colors-typography-layout-component-styling-and-use-it-consistently-across-search-weather-details-alerts-and-recommendation-sections",
+      "title": "Apply a coherent, creative visual theme for the app (colors, typography, layout, component styling) and use it consistently across search, weather details, alerts, and recommendation sections.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-logo-and-simple-weather-condition-icons-and-render-them-in-the-ui-e-g-header-logo-and-condition-iconography-from-the-frontend-public-assets-directory",
+      "title": "Add generated static image assets (logo and simple weather condition icons) and render them in the UI (e.g., header logo and condition iconography) from the frontend public assets directory.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-location-search-ui-so-users-can-search-and-select-any-place-in-the-world-not-just-berlin-or-san-francisco-replace-the-current-hardcoded-string-matching-search-behavior-with-a-real-place-search-that-returns-multiple-matches-city-region-country-and-lets-the-user-select-one-result-to-set-latitude-longitude-for-weather-fetching",
+      "title": "Update the location search UI so users can search and select any place in the world (not just Berlin or San Francisco). Replace the current hardcoded string-matching search behavior with a real place search that returns multiple matches (city/region/country) and lets the user select one result to set latitude/longitude for weather fetching.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Show weather information for all places (global location support).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Display weather warnings/alerts for selected locations.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Provide 'what to wear' recommendations based on current/forecast conditions (including heat).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Include heat-related information (e.g., high temperature/heat conditions) in the weather display.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement backend weather data retrieval for a given location, including geocoding/place search and weather/forecast retrieval, exposed via Motoko canister methods callable by the frontend.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Remove the backend restriction that only allows \"blessed\" locations. Update backend/main.mo so location lookup no longer traps for non-Berlin/San-Francisco inputs, enabling global location lookup support.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Global weather app with alerts, heat info, and clothing recommendations",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

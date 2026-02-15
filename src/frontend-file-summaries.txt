@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main weather dashboard application with global location search, current conditions display, forecast, alerts, heat panel, and clothing recommendations with warm earthy theme.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook that fetches weather data from Open-Meteo API for a given location with automatic refetching.",
+  "frontend/src/features/weather/types.ts": "TypeScript type definitions for weather data structures including current conditions, daily forecast, alerts, and recommendations.",
+  "frontend/src/features/weather/icons/conditionIcons.ts": "Utility functions to map WMO weather codes to generated icon assets and human-readable descriptions.",
+  "frontend/src/features/weather/heat/thresholds.ts": "Heat risk level calculation and styling utilities based on temperature thresholds (25°C, 30°C, 35°C, 40°C).",
+  "frontend/src/features/weather/recommendations/whatToWear.ts": "Logic to generate clothing and safety recommendations based on temperature, precipitation, wind, and heat risk levels.",
+  "frontend/src/features/weather/recommendations/heatRisk.ts": "Heat risk assessment with level-specific safety guidance for low, moderate, high, and extreme conditions.",
+  "frontend/src/features/weather/components/CurrentConditions.tsx": "Card component displaying current temperature, feels-like, humidity, wind, precipitation with weather icon.",
+  "frontend/src/features/weather/components/ForecastPanel.tsx": "7-day forecast grid showing daily weather icons, high/low temperatures, and precipitation probability.",
+  "frontend/src/features/weather/components/AlertsPanel.tsx": "Weather alerts display with severity badges and descriptions, using only valid Alert variant values ('default' or 'destructive'), or \"No Active Alerts\" message when none exist.",
+  "frontend/src/features/weather/components/WhatToWearPanel.tsx": "Grid of clothing recommendations organized by category (base layers, footwear, rain gear, heat safety) with emoji icons.",
+  "frontend/src/features/weather/components/HeatPanel.tsx": "Dedicated heat information card showing current temperature, feels-like, today's high, and heat risk level with safety guidance.",
+  "frontend/src/index.css": "Global styles with warm earthy OKLCH color palette (terracotta, sand, amber) for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with warm color tokens, custom shadows, and Inter font family.",
+  "frontend/src/features/location/types.ts": "TypeScript type definitions for place search results and location search state including coordinates, country, and administrative regions.",
+  "frontend/src/hooks/useLocationSearch.ts": "Custom React hook that performs debounced global location search using Open-Meteo Geocoding API with loading states, error handling, and request cancellation.",
+  "frontend/src/features/location/components/LocationSearch.tsx": "Location search component with dropdown results showing matching places worldwide, formatted display names, and selection callback."
+}

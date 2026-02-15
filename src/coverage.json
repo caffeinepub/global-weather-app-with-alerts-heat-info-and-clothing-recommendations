@@ -1,0 +1,57 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T12:08:48.761Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-8",
+        "summary": "Update the location search UI so users can search and select any place in the world (not just Berlin or San Francisco). Replace the current hardcoded string-matching search behavior with a real place search that returns multiple matches (city/region/country) and lets the user select one result to set latitude/longitude for weather fetching.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useLocationSearch.ts",
+          "frontend/src/features/location/types.ts",
+          "frontend/src/features/location/components/LocationSearch.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useLocationSearch.ts",
+          "frontend/src/features/location/types.ts",
+          "frontend/src/features/location/components/LocationSearch.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Remove the backend restriction that only allows \"blessed\" locations. Update backend/main.mo so location lookup no longer traps for non-Berlin/San-Francisco inputs, enabling global location lookup support.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/features/location/components/LocationSearch.tsx",
+    "frontend/src/features/location/types.ts",
+    "frontend/src/hooks/useLocationSearch.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

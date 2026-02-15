@@ -1,2 +1,3 @@
-# global-weather-app-with-alerts-heat-info-and-clothing-recommendations
-Exported from Caffeine project: Global weather app with alerts, heat info, and clothing recommendations
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
